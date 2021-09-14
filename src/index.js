@@ -4,8 +4,8 @@ const { Client } = require('whatsapp-web.js');
 const client = new Client(
   {
     puppeteer: {
-      executablePath: "/usr/bin/chromium-browser",
-      ignoreDefaultArgs: ['--no-sandbox'],
+      executablePath: "/opt/google/chrome/google-chrome",
+      // ignoreDefaultArgs: ['--no-sandbox'],
     }
   }
 );
@@ -20,7 +20,8 @@ client.on('ready', () => {
 
 client.on('message', message => {
   console.log('message',message);
-	if(message.body === '!ping') {
+  console.log('body',message.body);
+	if (message.body == 'ping') {
 		client.sendMessage(message.from, 'pong');
 	}
 });
