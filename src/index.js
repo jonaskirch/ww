@@ -4,8 +4,11 @@ const { Client } = require('whatsapp-web.js');
 const client = new Client(
   {
     puppeteer: {
-      executablePath: "/opt/google/chrome/google-chrome",
-      // ignoreDefaultArgs: ['--no-sandbox'],
+      headless: true,
+      timeout: 99999999,
+      args: ['--no-sandbox','--use-gl=swiftshade','--disable-software-rasterizer','--disable-dev-shm-usage'],
+      executablePath: "/usr/bin/chromium-browser",
+      ignoreDefaultArgs: ['--disable-extensions'],
     }
   }
 );
