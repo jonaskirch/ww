@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { ClientSession } from 'whatsapp-web.js';
 
-const SESSION_FILE_PATH = './sessionData.json';
+const SESSION_FILE_PATH = './src/data/sessionData.json';
 
 function saveSession(session: ClientSession | undefined) {
   fs.writeFile(SESSION_FILE_PATH, JSON.stringify(session), err => {
