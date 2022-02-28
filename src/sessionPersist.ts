@@ -25,4 +25,8 @@ function getSession(): ClientSession | undefined {
   return undefined;
 }
 
-export { saveSession, getSession };
+function removeSession(): any {
+  fs.rmSync(SESSION_FILE_PATH);
+}
+
+export { saveSession, getSession, removeSession };
